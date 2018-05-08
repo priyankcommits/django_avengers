@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+  <div class="col-xs-12" style="margin:50px;">
+    <div class="row">
+      {% for hero in heroes %}
+      <div class="col-xs-3">
+        <div class="card" style="width: 18rem;margin:20px;">
+          <img class="card-img-top" src="{{hero.icon}}" alt="Card image cap", height="200">
+          <div class="card-body">
+            <h5 class="card-title">{% if hero.is_god %}<i class="fab fa-btc"></i>{% endif %} {{hero.name}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Power: {{hero.power}}</li>
+            <li class="list-group-item">Speciality: {{hero.speciality}}</li>
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
